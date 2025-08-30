@@ -1,0 +1,45 @@
+<div>
+    <button [routerLink]="['/boards']" routerLinkActive="router-link-active" mat-button color="secondary" >
+        Go back to boards
+    </button>
+</div>
+
+<h1>{{ board()?.name }}</h1>
+
+<div cdkDropListGroup cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="onSwimlaneChanged($event)" class="swimlanes-wrapper">
+    @for (swimlane of board()?.swimlanes; track swimlane) {
+        <div class="swimlane" cdkDrag>
+            <div class="swimlane-header" cdkDragHandle>
+                <h2>{{ swimlane.name }}</h2>
+                <button mat-button (click)="deleteSwimlane(swimlane)">Delete</button>
+            </div>
+            <div class="swimlane-inner">
+                <div class="swimlane-inner__dragzone" cdkDropList cdkDropListOrientation="vertical" [cdkDropListData]="swimlane.cards" (cdkDropListDropped)="onCardChange($event, swimlane)">
+                    @for(card of swimlane.cards; track card) {
+                        <button class="swimlane__card" (click)="addOrEditCard(swimlane, card)" cdkDrag>
+                            {{ card.name }}
+                        </button>
+                    }
+                </div>
+            </div>
+            <button (click)="addOrEditCard(swimlane)" mat-button>Add card</button>
+        </div>
+    }
+    <div class="swimlane">
+        <h2>New Swimlane</h2>
+        <div class="swimlane-inner">
+            <form [formGroup]="swimlaneForm">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" placeholder="Ex. To do">
+                    
+                    @if(!swimlaneForm.controls.name.hasError('required')) {
+                        <mat-error>Please enter a valid name</mat-error>
+                    }
+                </mat-form-field>
+                <br>
+                <button (click)="addSwimlane()" color="primary" mat-flat-button>Add new swimlane</button>
+            </form>
+        </div>
+    </div>
+</div>

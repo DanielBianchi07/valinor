@@ -1,46 +1,31 @@
 ## Envio de solução
 
-Gostariamos de entender como você pensa e as decisões que você tomou durante o desenvolvimento, detalhe um pouco mais sobre:
-
 **Framework, linguagem e ferramentas**
 
-Descreva ferramentas e bibliotecas (libraries, framework, tools etc) você usou.
+No backend utilizei NestJS com TypeScript, TypeORM para ORM, JWT para autenticação, e MySQL como banco de dados implementado em um container Docker. No frontend utilizei Angular, RxJS para gerenciamento de estados e Angular Material para UI.
 
 **Técnologias X e Y**
 
-Justifique porque você optou pela tecnologia X e não a Y?
+Escolhi NestJS por sua arquitetura modular e integração nativa com TypeORM, facilitando o desenvolvimento escalável. Angular foi escolhido pela robustez, comunidade ativa e facilidade de integração com APIs REST. Preferi MySQL por ser um banco relacional amplamente utilizado e fácil de configurar.
 
 **Princípios de software**
 
-Quais princípios da engenharia de software que você usou?
+Apliquei SOLID, separação de responsabilidades (controllers, services, modules), e uso de DTOs para validação. O frontend segue o padrão de componentes e serviços, facilitando manutenção e testes.
 
 **Desafios e problemas**
 
-Conte um pouco sobre os desafios e problemas que você enfrentou e como você resolveu.
+O maior desafio foi integrar autenticação JWT entre backend e frontend, garantindo segurança e persistência de sessão. Resolvi utilizando interceptors no Angular e guards no NestJS. Também trabalhei para garantir que as entidades e relacionamentos no banco refletissem corretamente as regras de negócio.
 
 **Melhorias e próximas implementações**
 
-O que você entende que pode ser melhorado e como isso pode ser feito?
-
-**Vídeo de apresentação**
-
-Grave um vídeo do seu projeto rodando e envie o link:
-<!-- Dica: você pode usar o https://jam.dev/ para facilitar sua gravação ;) -->
+Pretendo adicionar testes de integração, melhorar a responsividade aparência do frontend e implementar logs centralizados no backend. Também planejo adicionar internacionalização e realizar o deploy.
 
 **Sobre você**
 
-Queremos te conhecer um pouco melhor, conte um pouco sobre você.
-
-Onde nasceu/De onde você é? Lugares que estudou, empresas que trabalhou, como você se envolveu com desenvolvimento de software.. enfim, Quem é você?
+Meu nome é Daniel Bianchi dos Santos, sou desenvolvedor fullstack, formado em Analise e Desenvolvimento de Sistemas. Nasci em São josé do Rio Rreto, e sou apaixonado por arquitetura de software e boas práticas. Comecei a programar em 2022 e desde então venho aprimorando meus conhecimentos em projetos desafiadores e querendo aprender cada vez mais sobre a área.
 
 **Outros detalhes**
 
-Se quiser enviar alguma informação adicional sobre o desafio..
-
+O projeto está organizado em pastas separadas para backend e frontend, facilitando manutenção e escalabilidade.
 
 ---
-
-Ah, deixe seu e-mail ou telefone para entrarmos em contato com você :) 
-
-
-
